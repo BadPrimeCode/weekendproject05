@@ -3,22 +3,54 @@
   <head>
     <meta charset="utf-8">
     <title>Weekend Project 5</title>
-
     <script src="vendors/angular.min.js"></script>
     <script src="vendors/angular-route.min.js"></script>
     <script src="assets/scripts/client.js"></script>
     <script src="assets/scripts/controllers/homeController.js"></script>
     <script src="assets/scripts/controllers/addController.js"></script>
     <script src="assets/scripts/controllers/petsController.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="styles/font-awesome.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="styles/style.css" media="screen" title="no title">
   </head>
   <body>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#add">Add</a></li>
-      <li><a href="#pets">Pets</a></li>
-    </ul>
+    <header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Creatures!</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#add"><i class="fa fa-plus-circle"></i> Add</a></li>
+                    <li><a href="#pets"><i class="fa fa-paw"></i> Pets</a></li>
+                </ul>
+            </div>
+            </nav>
+        </header>
 
     <main ng-view></main>
 
+  </body>
+</html>
+
+=================================
+
+  <body>
+    <div ng-controller="IndexController">
+    <p ng-show="pet.name">Your new pet's name is: {{ pet.name }}</p>
+    <p ng-hide="pet.name">Enter your new pet's name!</p>
+
+    <form novalidate>
+        Name: <input type="text" ng-model="pet.name" /><br />
+        <input type="submit" ng-click="add(pet)" value="Save"/>
+    </form>
+
+    <h4>pets</h4>
+    <ul>
+        <li ng-repeat="pet in pets">{{ pet.name }}</li>
+    </ul>
+</div>
   </body>
 </html>
