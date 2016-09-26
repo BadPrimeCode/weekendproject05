@@ -1,10 +1,13 @@
 myApp.controller('petsController', ['$scope', '$http', function($scope, $http){
   console.log('in pets controller');
    $scope.pets = [];
-   var getPets = function() {
-       return $http.get('/pets').then(function(res){
+    $scope.getPets = function() {
+        $http({
+          method: 'GET',
+          url: '/pets'
+        }).then(function success(res){
            if(res.status !== 200){
-               throw new Error('Failed to get pets from API');
+               console.log ('failed to get pets. sad!');
            }
            $scope.pets = res.data;
            return res.data;

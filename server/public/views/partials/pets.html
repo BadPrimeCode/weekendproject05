@@ -1,4 +1,20 @@
 <h1>All the Pets!</h1>
+<div ng-init="getPets()" ng-controller ="petsController">
+<div id ="allThePets" ng-repeat ="pet in pets">
+  <div>
+    {{pet.name}}
+  </div>
+  <div>
+    {{pet.animal}}
+  </div>
+  <div>
+    {{pet.age}}
+  </div>
+  <div>
+    <img ng-src={{pet.image_url}} alt="pet image" />
+  </div>
+</div>
+
 
 <!-- <button ng-click=''>Delete Pet</button> -->
 <!-- <button ng-click=''>ABC?</button> -->
