@@ -1,10 +1,10 @@
 var express = require ('express');
 var router = express.Router();
 
-//model
-var Pet = require('../public/assets/models/pet');
+//require model
+var Pet = require('../public/assets/models/Pet');
 
-router.get('/pets', function(req, res) {
+router.get('/', function(req, res) {
   console.log('in pets get route');
   res.sendStatus(200);
 });
@@ -14,4 +14,4 @@ router.post('/add', function(req, res) {
   res.sendStatus(200);
 });
 
-module.exports = router;
+module.exports = PetsRouter;
