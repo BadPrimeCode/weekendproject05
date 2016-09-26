@@ -4,9 +4,9 @@ var router = express.Router();
 //require model
 var Pet = require('../public/assets/models/Pet');
 
-router.post('/add', function(req, res) {
+router.post('/', function(req, res) {
   console.log('in pets add route');
-  console.log('req.body: ', req.body);
+  console.log('sent pet: ', req.body);
 
   var newPet = new Pet({
     name: req.body.name,
@@ -17,12 +17,10 @@ router.post('/add', function(req, res) {
 
   newPet.save(function(err) {
     if(err){
-      //failed
       console.log('error occurred:', err);
       res.sendStatus(500);
     }else{
-      console.log(newPet.name + ' saved successfully!');
-      res.send(newPet.toJSON());
+      console.log(newPet.name + ' saved!');
       res.sendStatus(201);
     }
   });

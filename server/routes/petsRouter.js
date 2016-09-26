@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
       console.log('error occurred:', err);
       res.sendStatus(500);
     }else{
-      console.log('got pets!');
+      console.log('got all the pets!');
       res.send(pets);
     }
   });
