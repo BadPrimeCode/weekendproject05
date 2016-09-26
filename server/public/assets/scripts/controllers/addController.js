@@ -1,5 +1,5 @@
-myApp.controller("addController", ["$scope", "$location", function($scope, $location){
-  console.log("in add controller");
+myApp.controller('addController', ['$scope', '$location', function($scope, $location){
+  console.log('in add controller');
   $scope.petinfo = false;
   $scope.pet = {};
   $scope.add = function(pet){

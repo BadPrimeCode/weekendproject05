@@ -7,6 +7,9 @@ var path = require('path');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+//require model
+var Pet = require('../public/assets/models/pet');
+
 // port decision
 app.set('port', (process.env.PORT || 3030));
 
@@ -21,6 +24,7 @@ app.use(express.static('public'));
 // routers
 var indexRouter = require('./routes/indexRouter');
 var petsRouter = require('./routes/petsRouter');
+
 // use routers
 app.use('/', indexRouter);
 app.use('/pets', pets);

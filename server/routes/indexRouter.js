@@ -13,7 +13,7 @@ router.get('/', function(req,res){
       res.sendFile(path.join(__dirname, '../public/', file));
   }); //end direction
 
-//model
+//require model
 var Pet = require('../public/assets/models/pet');
 
 router.get('/pets', function(req, res) {

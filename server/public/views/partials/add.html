@@ -1,23 +1,23 @@
-<div ng-controller="addController">
+<div ng-controller='addController'>
   <h1>Add Your Pet!</h1>
-    <span ng-hide="pet.name">
+    <span ng-hide='pet.name'>
         <p>Enter your pet's info:</p>
     </span>
 
     <form>
         Name:
-        <input type="text" ng-model="pet.name" required/><br/>
+        <input type='text' ng-model='pet.name' required/><br/>
         Animal:
-        <input type="text" ng-model="pet.animal" required/><br/>
+        <input type='text' ng-model='pet.animal' required/><br/>
         Age:
-        <input type="number" ng-model="pet.age" required/><br/>
+        <input type='number' ng-model='pet.age' required/><br/>
         Image URL:
-        <input type="url" ng-model="pet.image_url" required/>
+        <input type='url' ng-model='pet.image_url' required/>
         <br/>
-        <input type="submit" ng-click="add(pet)" value="Save"/>
+        <input type='submit' ng-click='add(pet)' value='Save'/>
     </form>
 
-    <span ng-show="petinfo">
+    <span ng-show='petinfo'>
         <h4>Your pet:</h4>
         <p>Name:
             {{ pet.name }}
@@ -28,10 +28,10 @@
             {{ pet.age }}
             <br>Image:
         </p>
-        <img ng-src="{{ pet.image_url }}">
+        <img ng-src='{{ pet.image_url }}'>
         <br>
         <br>
-        <button ng-click="showAll()">Show All Pets!</button>
+        <button ng-click='showAll()'>Show All Pets!</button>
     </span>
 
 </div>

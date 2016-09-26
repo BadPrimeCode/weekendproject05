@@ -1,5 +1,5 @@
-myApp.controller("petsController", ['$scope', '$http', function($scope, $http){
-  console.log("in pets controller");
+myApp.controller('petsController', ['$scope', '$http', function($scope, $http){
+  console.log('in pets controller');
    $scope.pets = [];
    var getPets = function() {
        return $http.get('/pets').then(function(res){
