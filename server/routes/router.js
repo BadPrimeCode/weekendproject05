@@ -1,33 +1,33 @@
 var express = require('express');
 var router = express.Router(); // instead of var app = express();
-
 var mongoose = require('mongoose');
 
 //model
 var Pet = require('../models/pet');
 
-router.get('/', function(req, res) {
-
-  Pet.find({}, function(err, petResults) {
-    if(err){
-      console.log('error occurred:', err);
-      res.sendStatus(500);
-    }else{
-      res.send(petResults);
-    }
-  });
-});
+// router.get('/', function(req, res) {
+//
+//   Pet.find({}, function(err, petResults) {
+//     if(err){
+//       console.log('error occurred:', err);
+//       res.sendStatus(500);
+//     }else{
+//       res.send(petResults);
+//     }
+//   });
+// });
 
 router.post('/', function(req, res) {
-  console.log('hit the post');
-  console.log('request body', req.body);
+  console.log('hit post');
+  console.log('req.body: ', req.body);
 
   var sentData = req.body;
 
   var newPet = new Pet({
-    name: sentData.firstName, //Millie
-    petname: sentData.petName, //millie
-    admin: sentData.admin
+    name: sentData.name,
+    animal: sentData.animal,
+    age: sentData.age,
+    image_url: sentData.image_url
   });
 
   newPet.save(function(err) {
