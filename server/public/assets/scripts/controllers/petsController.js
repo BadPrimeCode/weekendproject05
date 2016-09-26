@@ -13,5 +13,4 @@ myApp.controller('petsController', ['$scope', '$http', function($scope, $http){
            return res.data;
        });
    };
-   getPets();
 }]);
