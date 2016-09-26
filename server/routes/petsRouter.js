@@ -6,12 +6,15 @@ var Pet = require('../public/assets/models/Pet');
 
 router.get('/', function(req, res) {
   console.log('in pets get route');
-  res.sendStatus(200);
+  Pet.find({}, function(err, pets) {
+    if(err){
+      console.log('error occurred:', err);
+      res.sendStatus(500);
+    }else{
+      console.log('got pets!');
+      res.send(pets);
+    }
+  });
 });
 
-router.post('/add', function(req, res) {
-  console.log('in pets add route');
-  res.sendStatus(200);
-});
-
-module.exports = PetsRouter;
+module.exports = petsRouter;
