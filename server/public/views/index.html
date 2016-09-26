@@ -39,41 +39,20 @@
           <!-- /#sidebar-wrapper -->
           <!-- Page Content -->
           <div id="page-content-wrapper">
-            <!-- Make sure to keep all page content within the <code>#page-content-wrapper</code>. -->
-
               <div class="container-fluid">
-
                   <div class="row">
-                      <div class="col-lg-12">
 
+                      <div class="col-lg-12">
+                          <!-- <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p> -->
+                    <main ng-view></main>
 
                       </div>
                   </div>
               </div>
           </div>
           <!-- /#page-content-wrapper -->
-
       </div>
       <!-- /#wrapper -->
+
   </body>
 </html>
-<!--
-=================================
-
-  <body>
-    <div ng-controller="IndexController">
-    <p ng-show="pet.name">Your new pet's name is: {{ pet.name }}</p>
-    <p ng-hide="pet.name">Enter your new pet's name!</p>
-
-    <form novalidate>
-        Name: <input type="text" ng-model="pet.name" /><br />
-        <input type="submit" ng-click="add(pet)" value="Save"/>
-    </form>
-
-    <h4>pets</h4>
-    <ul>
-        <li ng-repeat="pet in pets">{{ pet.name }}</li>
-    </ul>
-</div>
-  </body>
-</html> -->

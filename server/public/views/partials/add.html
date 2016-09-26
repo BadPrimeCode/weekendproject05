@@ -1,1 +1,35 @@
-<p>Woof!</p>
+<div ng-controller="addController">
+    <span ng-hide="pet.name">
+        <p>Enter your pet's info!</p>
+    </span>
+    
+    <form novalidate>
+        Name:
+        <input type="text" ng-model="pet.name"/><br/>
+        Animal:
+        <input type="text" ng-model="pet.animal"/><br/>
+        Age:
+        <input type="text" ng-model="pet.age"/><br/>
+        Image URL:
+        <input type="text" ng-model="pet.image_url"/><br/>
+        <input type="submit" ng-click="add(pet)" value="Save"/>
+    </form>
+
+    <span ng-show="pet.name">
+        <h4>Your pet:</h4>
+        <p>Name:
+            {{ pet.name }}
+            <br>
+            Animal:
+            {{ pet.animal }}
+            <br>Age:
+            {{ pet.age }}
+            <br>Image:
+        </p>
+        <img ng-src="{{ pet.image_url }}">
+        <br>
+        <br>
+        <button ng-click="showAll()">Show All Pets!</button>
+    </span>
+
+</div>
