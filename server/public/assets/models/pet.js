@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var petSchema = new Schema({
+var petSchema = new mongoose.Schema({
   name:  String,
   animal: String,
   age:   Number,

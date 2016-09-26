@@ -16,13 +16,13 @@ router.get('/*', function(req,res){
 //model
 var Pet = require('../public/assets/models/pet');
 
-router.get('/', function(req, res) {
-  Pet.find({}, function(err, pets) {
+router.get('/pets', function(req, res) {
+  Pet.find({}).exec(function(err, pets) {
     if(err){
       console.log('error occurred:', err);
       res.sendStatus(500);
     }else{
-      res.send(pets);
+          res.send(JSON.stringify(pets));
     }
   });
 });
@@ -48,15 +48,6 @@ router.post('/add', function(req, res) {
       res.send(newPet.toJSON());
       res.sendStatus(201);
     }
-  });
-});
-
-router.get('/pets', function(req, res){
-  Pet.find({}).exec(function(err, pets){
-    if (err) {
-      throw new Error(err);
-    }
-    res.send(JSON.stringify(pets));
   });
 });
 
