@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 
 mongoose.createConnection('mongodb://localhost/pets');
 
-router.get('/*', function(req,res){
+router.get('/', function(req,res){
       // console.log('property: ', req.params[0]);
       var file = req.params[0] || '/views/index.html';
       res.sendFile(path.join(__dirname, '../public/', file));

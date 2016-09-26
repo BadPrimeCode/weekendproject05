@@ -18,10 +18,12 @@ app.listen(app.get('port'), function() {
 // set up public folder
 app.use(express.static('public'));
 
-// router
+// routers
 var indexRouter = require('./routes/indexRouter');
-// use router
+var petsRouter = require('./routes/petsRouter');
+// use routers
 app.use('/', indexRouter);
+app.use('/pets', pets);
 
 // direct to path
 app.get('/*', function(req,res){
@@ -32,18 +34,3 @@ app.get('/*', function(req,res){
 
 //connection string with the database
 mongoose.createConnection('mongodb://localhost:27017/pets');
-
-
-// =======================================
-
-// //demonstrate query strings and url params
-// app.get('/test/:id?', function(req, res) {
-//   console.log('in test route');
-//
-//   console.log('req.body = ', req.body);
-//   console.log('req.query = ', req.query); // localhost:3000/test?q=
-//   console.log('req.params = ', req.params); //localhost:3000/test/id
-//
-//   res.send('OK');
-// });
-//
