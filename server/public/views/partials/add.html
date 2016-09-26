@@ -1,6 +1,6 @@
 <div ng-controller="addController">
   <h1>Add Your Pet!</h1>
-    <span ng-hide="pet.name">
+    <span ng-hide="petinfo">
         <p>Enter your pet's info:</p>
     </span>
 
@@ -17,7 +17,7 @@
         <input type="submit" ng-click="add(pet)" value="Save"/>
     </form>
 
-    <span ng-show="pet">
+    <span ng-show="petinfo">
         <h4>Your pet:</h4>
         <p>Name:
             {{ pet.name }}

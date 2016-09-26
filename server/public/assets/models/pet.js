@@ -8,6 +8,6 @@ var petSchema = new Schema({
   image_url: String
 });
 
-var Pet = mongoose.model('pets', petSchema);
+var Pet = mongoose.model('Pet', petSchema);
 
 module.exports = Pet;
