@@ -17,4 +17,4 @@ router.get('/', function(req, res) {
   });
 });
 
-module.exports = petsRouter;
+module.exports = router;
