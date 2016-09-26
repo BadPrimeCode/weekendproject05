@@ -16,14 +16,16 @@ myApp.controller('addController', ['$scope', '$http', function($scope, $http){
       url: '/add',
       data: newPet
     }).then(function success(req){
+        console.log('added pet: ', newPet);
        if(req.status !== 200){
            console.log ('failed to add pet. sad!');
-       }
+       }else{
        $scope.pets = req.data;
        return req.data;
+     }
    });
           $scope.petinfo = true;
-      console.log('added pet: ', req.data);
+
   };
 
     $scope.showAll = function() {
